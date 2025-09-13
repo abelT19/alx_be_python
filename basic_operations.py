@@ -1,6 +1,6 @@
 # basic_operations.py
 
-# Assign values to the variables
+
 number1 = 10
 number2 = 5
 
