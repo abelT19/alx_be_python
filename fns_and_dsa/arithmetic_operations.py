@@ -1,43 +1,26 @@
-##Arithmetic Operations
+# arithmetic_operations.py
 
-
-
-
-
-   
-
-
-
-# take inputs
-num_1 = float(input("Enter first number: "))
-num_2 = float(input("Enter second number: "))
-operation = input("Enter operation (adder, substractor, multiplication, division): ")
-
-# define functions
-def adder(num_1, num_2):
-    return num_1 + num_2
-
-def substractor(num_1, num_2):
-    return num_1 - num_2
-
-def multiplication(num_1, num_2):
-    return num_1 * num_2
-
-def division(num_1, num_2):
-    if num_2 != 0:
-        return num_1 / num_2
+def perform_operation(num1: float, num2: float, operation: str):
+    """
+    Perform basic arithmetic operations.
+    
+    Parameters:
+        num1 (float): First number
+        num2 (float): Second number
+        operation (str): One of 'add', 'subtract', 'multiply', 'divide'
+    
+    Returns:
+        float or str: Result of the operation, or an error message
+    """
+    if operation == "add":
+        return num1 + num2
+    elif operation == "subtract":
+        return num1 - num2
+    elif operation == "multiply":
+        return num1 * num2
+    elif operation == "divide":
+        if num2 == 0:
+            return "Error: Division by zero is not allowed."
+        return num1 / num2
     else:
-        return "Error: Division by zero!"
-
-# choose operation
-if operation == "adder":
-    print(adder(num_1, num_2))
-elif operation == "substractor":
-    print(substractor(num_1, num_2))
-elif operation == "multiplication":
-    print(multiplication(num_1, num_2))
-elif operation == "division":
-    print(division(num_1, num_2))
-else:
-    print("Invalid operation")
-
+        return "Error: Invalid operation."
